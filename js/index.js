@@ -25,6 +25,7 @@ const dataCategoryId=(id)=>{
  fetch(url)
  .then(res=> res.json())
  .then(data=>dataDisplay(data.data))
+ .catch(error=>console.log(error))
 }
 const dataDisplay=datas=>{
     const mainContainer=document.getElementById('main-container')
@@ -38,7 +39,7 @@ const dataDisplay=datas=>{
     }
 
 datas.forEach(data=>{
-    // console.log(data)
+    console.log(data)
     const mainDiv=document.createElement('div')
     mainDiv.classList.add('col')
     mainDiv.innerHTML=`
