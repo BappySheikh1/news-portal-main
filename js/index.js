@@ -33,7 +33,7 @@ const dataDisplay=datas=>{
     mainContainer.innerText='';
 
     const notFound=document.getElementById('not-found')
-    if(datas.length === 0){
+    if(datas.length == 0){
       notFound.classList.remove('d-none')
     }else{
       notFound.classList.add('d-none')
@@ -61,7 +61,9 @@ datas.forEach(data=>{
       </div>
     `
     mainContainer.appendChild(mainDiv)
+    
 })
+
 toggleSpinner(false)
 }
 
@@ -106,3 +108,4 @@ const displayDetailData=datas=>{
   });
 }
 categoryData()
+dataCategoryId('08')
