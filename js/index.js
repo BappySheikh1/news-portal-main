@@ -1,4 +1,4 @@
-
+// Category Start
 const categoryData=()=>{
     fetch(`https://openapi.programming-hero.com/api/news/categories`)
     .then(res=>res.json())
@@ -6,20 +6,24 @@ const categoryData=()=>{
     .catch(er=>console.log(er))
 }
 const displayCategory=datas=>{
+  
     const categoriesContainer=document.getElementById('category-container')
     categoriesContainer.innerText='';
     datas.forEach(data => {
       
         const categoriesDiv=document.createElement('div')
         // console.log(data)
-        
+      
         categoriesDiv.innerHTML=`
         <p onclick="dataCategoryId('${data.category_id}')">${data.category_name}</p>
         `
         categoriesContainer.appendChild(categoriesDiv)
     });
-
+    
 }
+// Category End
+
+// Category Data Id start
 const dataCategoryId=(id)=>{
  const url=(`https://openapi.programming-hero.com/api/news/category/${id}`)
  fetch(url)
@@ -30,8 +34,7 @@ const dataCategoryId=(id)=>{
 const dataDisplay=datas=>{
     const mainContainer=document.getElementById('main-container')
     mainContainer.innerText='';
-
-
+    console.log(datas.length)
 datas.forEach(data=>{
     // console.log(data)
     const mainDiv=document.createElement('div')
@@ -57,20 +60,22 @@ datas.forEach(data=>{
     
 })
 
-// toggleSpinner(false)
 }
+// Category Data Id end
 
 // Spinner added
 const toggleSpinner=isLoader=>{
   const loaderSpinner=document.getElementById('loader')
-  if(isLoader === true){
+  if(isLoader){
     loaderSpinner.classList.remove('d-none')
   }
   else{
     loaderSpinner.classList.add('d-none')
   }
 }
-// Modal Detail Data
+// Spinner end
+
+// Modal Detail Data start
 const detailData=newId=>{
   const url=`https://openapi.programming-hero.com/api/news/${newId}`
   fetch(url)
@@ -80,7 +85,7 @@ const detailData=newId=>{
 }
 const displayDetailData=datas=>{
   datas.forEach(data => {
-    console.log(data)
+    // console.log(data)
     const modalTitle=document.getElementById('exampleModalLabel')
     modalTitle.innerText=data.title
     const modalBodyContainer=document.getElementById('modalBody-container')
@@ -100,5 +105,6 @@ const displayDetailData=datas=>{
     `
   });
 }
+// Modal detail end
 dataCategoryId('08')
 categoryData()
