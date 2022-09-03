@@ -48,7 +48,7 @@ datas.forEach(data=>{
        <img src="${data.thumbnail_url}" class="card-img-top" alt="...">
        <div class="card-body">
          <h5 class="card-title">${data.title}</h5>
-           <p class="card-text">${data.details.slice(0, 300)}</p>
+           <p class="card-text">${data.details.slice(0,300) +'...' }</p>
            <div class="d-flex justify-content-between align-items-center">
            <div class="d-flex align-items-center">
            <img src="${data.author.img}" class="img-fluid w-25 h-25 rounded-circle">
@@ -93,7 +93,7 @@ const displayDetailData=datas=>{
     <img src="${data.image_url}" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Publish Date: ${data.author.published_date? data.author.published_date:'No published date'}</h5>
-        <p class="card-text">${data.details}</p>
+        <p class="card-text">${data.details.slice(0,300) +'...'}</p>
         <div class="d-flex justify-content-between align-items-center">
         <div class="d-flex align-items-center">
         <img src="${data.author.img}" class="img-fluid w-25 h-25 rounded-circle">
