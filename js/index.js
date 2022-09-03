@@ -61,7 +61,7 @@ datas.forEach(data=>{
     mainContainer.appendChild(mainDiv)
     
 })
-
+toggleSpinner(false)
 }
 // Category Data Id end
 
@@ -115,4 +115,5 @@ const putLength=(len)=>{
 }
 
 dataCategoryId('08')
+toggleSpinner(true)
 categoryData()
