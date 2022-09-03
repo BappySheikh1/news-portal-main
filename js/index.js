@@ -28,9 +28,17 @@ const dataCategoryId=(id)=>{
 }
 const dataDisplay=datas=>{
     const mainContainer=document.getElementById('main-container')
-    mainContainer.innerText=''
+    mainContainer.innerText='';
+
+    const notFound=document.getElementById('not-found')
+    if(datas.length === 0){
+      notFound.classList.remove('d-none')
+    }else{
+      notFound.classList.add('d-none')
+    }
+
 datas.forEach(data=>{
-    console.log(data)
+    // console.log(data)
     const mainDiv=document.createElement('div')
     mainDiv.classList.add('col')
     mainDiv.innerHTML=`
