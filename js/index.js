@@ -34,7 +34,7 @@ const dataCategoryId=(id)=>{
 const dataDisplay=datas=>{
     const mainContainer=document.getElementById('main-container')
     mainContainer.innerText='';
-    console.log(datas.length)
+    // console.log(datas.length)
     len =datas.length
     putLength(len)
 datas.forEach(data=>{
@@ -107,12 +107,12 @@ const displayDetailData=datas=>{
     `
   });
 }
-// find the length of news
+// Modal detail end
+// find the length of the news
 const putLength=(len)=>{
   const numOfNews=document.getElementById('numOfNews');
   numOfNews.innerText=len;
 }
 
-// Modal detail end
 dataCategoryId('08')
 categoryData()
