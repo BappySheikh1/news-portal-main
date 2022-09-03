@@ -37,6 +37,10 @@ const dataDisplay=datas=>{
     // console.log(datas.length)
     len =datas.length
     putLength(len)
+    
+    // sort load
+    sort(datas)
+
 datas.forEach(data=>{
     // console.log(data)
     const mainDiv=document.createElement('div')
@@ -108,12 +112,15 @@ const displayDetailData=datas=>{
   });
 }
 // Modal detail end
-// find the length of the news
+// find the length of the datas
 const putLength=(len)=>{
   const numOfNews=document.getElementById('numOfNews');
   numOfNews.innerText=len;
 }
-
+// sort datas bu views by default
+const sort=data=>{
+  data.sort((a,b)=> b.total_view - a.total_view);
+}
 dataCategoryId('08')
 toggleSpinner(true)
 categoryData()
