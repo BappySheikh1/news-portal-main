@@ -9,13 +9,12 @@ const displayCategory=datas=>{
     const categoriesContainer=document.getElementById('category-container')
     categoriesContainer.innerText='';
     datas.forEach(data => {
-      toggleSpinner(true)
+      
         const categoriesDiv=document.createElement('div')
         // console.log(data)
+        
         categoriesDiv.innerHTML=`
-
         <p onclick="dataCategoryId('${data.category_id}')">${data.category_name}</p>
-       
         `
         categoriesContainer.appendChild(categoriesDiv)
     });
@@ -32,12 +31,6 @@ const dataDisplay=datas=>{
     const mainContainer=document.getElementById('main-container')
     mainContainer.innerText='';
 
-    const notFound=document.getElementById('not-found')
-    if(datas.length == 0){
-      notFound.classList.remove('d-none')
-    }else{
-      notFound.classList.add('d-none')
-    }
 
 datas.forEach(data=>{
     // console.log(data)
@@ -64,7 +57,7 @@ datas.forEach(data=>{
     
 })
 
-toggleSpinner(false)
+// toggleSpinner(false)
 }
 
 // Spinner added
@@ -107,5 +100,5 @@ const displayDetailData=datas=>{
     `
   });
 }
-categoryData()
 dataCategoryId('08')
+categoryData()
